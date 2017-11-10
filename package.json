@@ -13,6 +13,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -27,6 +29,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
     "prettier": "^1.8.2",
+    "react-styleguidist": "^6.0.33",
     "react-test-renderer": "^16.1.0"
   }
 }
