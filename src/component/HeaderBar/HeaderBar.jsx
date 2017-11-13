@@ -1,17 +1,29 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import AppBar from 'material-ui/AppBar';
 
 /**
  * The nav bar which appears on top of the website
  * Or appbar
  */
-const HeaderBar = () => (
-  <div>
-    <AppBar
-      title="Title"
-      iconClassNameRight="muidocs-icon-navigation-expand-more"
-    />
-  </div>
-);
+
+type Props = {
+  title: string
+};
+
+function HeaderBar(props: Props) {
+  return (
+    <div>
+      <AppBar
+        title={props.title}
+        iconClassNameRight="muidocs-icon-navigation-expand-more"
+      />
+    </div>
+  );
+}
+
+HeaderBar.defaultProps = {
+  title: 'Default Title'
+};
 
 export default HeaderBar;

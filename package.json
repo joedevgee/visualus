@@ -24,15 +24,16 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.15",
+    "@storybook/addon-links": "^3.2.15",
+    "@storybook/react": "^3.2.15",
     "enzyme": "^3.1.1",
     "enzyme-adapter-react-16": "^1.0.4",
+    "flow-bin": "^0.59.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
     "prettier": "^1.8.2",
     "react-test-renderer": "^16.1.0",
-    "storybook": "^1.0.0",
-    "@storybook/react": "^3.2.15",
-    "@storybook/addon-actions": "^3.2.15",
-    "@storybook/addon-links": "^3.2.15"
+    "storybook": "^1.0.0"
   }
 }
