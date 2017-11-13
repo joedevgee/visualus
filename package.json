@@ -13,9 +13,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -29,7 +29,10 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
     "prettier": "^1.8.2",
-    "react-styleguidist": "^6.0.33",
-    "react-test-renderer": "^16.1.0"
+    "react-test-renderer": "^16.1.0",
+    "storybook": "^1.0.0",
+    "@storybook/react": "^3.2.15",
+    "@storybook/addon-actions": "^3.2.15",
+    "@storybook/addon-links": "^3.2.15"
   }
 }
