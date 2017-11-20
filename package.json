@@ -6,21 +6,32 @@
     "material-ui": "^0.19.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.17"
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --single-quote --write",
-      "git add"
+    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/index.{js,jsx}",
+      "!src/registerServiceWorker.{js,jsx}",
+      "!src/setupTests.{js,jsx}",
+      "!src/reducer/index.{js,jsx}",
+      "src/**/*.{js,jsx}",
+      "!src/stories/**",
+      "!src/**/*.story.{js,jsx}"
     ]
   },
   "devDependencies": {
@@ -34,6 +45,7 @@
     "lint-staged": "^4.3.0",
     "prettier": "^1.8.2",
     "react-test-renderer": "^16.1.0",
+    "redux-devtools": "^3.4.1",
     "storybook": "^1.0.0"
   }
 }

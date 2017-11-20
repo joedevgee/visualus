@@ -8,7 +8,7 @@ Use public API and react to build data visualization website
 
 ### Command overview
 
-Start hot reloading development mode
+Start development mode
 ```sh
 yarn start
 ```
@@ -16,6 +16,11 @@ yarn start
 Start test mode
 ```sh
 yarn test
+```
+
+Generate test coverage report
+```sh
+yarn test --coverage
 ```
 
 To add external package, e.g. enzyme

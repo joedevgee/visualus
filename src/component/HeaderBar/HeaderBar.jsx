@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import AppBar from 'material-ui/AppBar';
+import Toggle from 'material-ui/Toggle';
 
 /**
  * The nav bar which appears on top of the website
@@ -12,11 +13,17 @@ type Props = {
 };
 
 function HeaderBar(props: Props) {
+  function handleToggle(e) {
+    console.log('Something is changed');
+  }
+
   return (
     <div>
       <AppBar
         title={props.title}
-        iconClassNameRight="muidocs-icon-navigation-expand-more"
+        iconElementRight={
+          <Toggle style={{ margin: 20 }} onToggle={handleToggle} />
+        }
       />
     </div>
   );
