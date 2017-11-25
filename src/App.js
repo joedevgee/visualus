@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeaderBar from './component/HeaderBar/HeaderBar';
+import HeaderBar from './container/HeaderBar';
 import logo from './logo.svg';
 import './App.css';
 
