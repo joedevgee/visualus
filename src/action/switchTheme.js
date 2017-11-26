@@ -1,10 +1,9 @@
-// @flow
 import { SWITCH_THEME } from '../actionType/switchThemeActionType';
 
-type Action = { type: SWITCH_THEME };
-
-export function switchTheme(): Action {
+const switchTheme = () => {
   return {
     type: SWITCH_THEME
   };
-}
+};
+
+export default switchTheme;
