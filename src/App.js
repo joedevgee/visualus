@@ -1,20 +1,38 @@
-import React, { Component } from 'react';
-import HeaderBar from './container/HeaderBar';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import darkTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import lightTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import HeaderBar from './component/HeaderBar/HeaderBar';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: 'Custom Title',
+      defaultTheme: true
+    };
+    this.switchTheme = this.switchTheme.bind(this);
+  }
+
+  switchTheme() {
+    this.setState({
+      defaultTheme: !this.state.defaultTheme
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <HeaderBar />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <MuiThemeProvider
+          muiTheme={
+            this.state.defaultTheme
+              ? getMuiTheme(lightTheme)
+              : getMuiTheme(darkTheme)
+          }
+        >
+          <HeaderBar title={this.state.title} onToggle={this.switchTheme} />
+        </MuiThemeProvider>
       </div>
     );
   }

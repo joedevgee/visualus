@@ -1,4 +1,4 @@
-import { switchTheme } from './switchTheme';
+import switchTheme from './switchTheme';
 import { SWITCH_THEME } from '../actionType/switchThemeActionType';
 
 describe('Switch theme actions', () => {

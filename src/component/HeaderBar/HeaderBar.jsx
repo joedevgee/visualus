@@ -10,23 +10,17 @@ import Toggle from 'material-ui/Toggle';
 
 type Props = {
   title?: string,
-  defaultTheme: boolean
-  // onToggle: () => void
+  onToggle: () => void
 };
 
 function HeaderBar(props: Props) {
   return (
-    <div>
-      <AppBar
-        title={props.title}
-        iconElementRight={
-          <Toggle
-            style={{ margin: 20 }}
-            onToggle={console.debug('Default theme? ', props.defaultTheme)}
-          />
-        }
-      />
-    </div>
+    <AppBar
+      title={props.title}
+      iconElementRight={
+        <Toggle style={{ margin: 20 }} onToggle={props.onToggle} />
+      }
+    />
   );
 }
 
