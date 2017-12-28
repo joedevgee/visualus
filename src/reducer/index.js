@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import switchTheme from './switchTheme';
+import fetchPlaces from './fetchPlaces';
+
+const fetchPlacesApi = param => {
+  fetch();
+};
 
 const reduxApp = combineReducers({
-  switchTheme
+  fetchPlaces
 });
 
 export default reduxApp;
