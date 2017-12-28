@@ -2,16 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug CRA Tests",
-      "type": "node",
+      "name": "Chrome",
+      "type": "chrome",
       "request": "launch",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",
-      "runtimeArgs": ["--inspect-brk", "test"],
-      "args": ["--runInBand", "--no-cache", "--env=jsdom"],
-      "cwd": "${workspaceRoot}",
-      "protocol": "inspector",
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceRoot}/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      }
     }
   ]
 }
