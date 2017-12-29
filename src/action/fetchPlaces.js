@@ -7,7 +7,7 @@ import {
 } from '../actionType/fetchPlacesActionType';
 
 type BeginFetchPlaces = {
-  type: FETCH_PLACES_BEGIN,
+  type: string,
   payload: {
     input: string,
     components: string,
@@ -15,14 +15,14 @@ type BeginFetchPlaces = {
   }
 };
 type CompleteFetchPlaces = {
-  type: FETCH_PLACES_COMPLETE,
-  response: {
+  type: string,
+  data: {
     predictions: Array<mixed>,
     status: string
   }
 };
 type FailFetchPlaces = {
-  type: FETCH_PLACES_FAIL,
+  type: string,
   error: string
 };
 
@@ -39,13 +39,13 @@ export function fetchBegin(payload: {
   };
 }
 
-export function fetchComplete(response: {
+export function fetchComplete(data: {
   predictions: Array<mixed>,
   status: string
 }): CompleteFetchPlaces {
   return {
     type: FETCH_PLACES_COMPLETE,
-    response
+    data
   };
 }
 

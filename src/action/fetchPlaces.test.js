@@ -19,15 +19,15 @@ describe('Fetch places autocomplete', () => {
     expect(actions.fetchBegin(payload)).toEqual(expectedAction);
   });
   it('should create an action to complete fetching', () => {
-    const response = {
+    const data = {
       predictions: [1, 2],
       status: 'OK'
     };
     const expectedAction = {
       type: FETCH_PLACES_COMPLETE,
-      response
+      data
     };
-    expect(actions.fetchComplete(response)).toEqual(expectedAction);
+    expect(actions.fetchComplete(data)).toEqual(expectedAction);
   });
   it('should create an action to fail fetching', () => {
     const error = 'Error';

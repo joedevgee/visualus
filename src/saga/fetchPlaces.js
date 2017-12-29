@@ -9,7 +9,6 @@ import {
 export function* fetchPlaces(action) {
   try {
     const data = yield call(GooglePlaces.fetchPlaces, action.payload);
-    console.debug('Fetched places from Google API: ', data);
     yield put({ type: FETCH_PLACES_COMPLETE, data });
   } catch (error) {
     yield put({ type: FETCH_PLACES_FAIL, error });
