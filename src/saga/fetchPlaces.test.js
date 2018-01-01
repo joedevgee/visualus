@@ -1,13 +1,11 @@
-import sinon from 'sinon';
 import { call, put, takeLatest } from 'redux-saga/effects';
-import GooglePlaces from '../api/googlePlaces';
 import watchSaga, { fetchPlaces } from './fetchPlaces';
 import {
   FETCH_PLACES_FAIL,
   FETCH_PLACES_COMPLETE,
   FETCH_PLACES_BEGIN
 } from '../actionType/fetchPlacesActionType';
-import googlePlaces from '../api/googlePlaces';
+import GooglePlaces from '../api/googlePlaces';
 
 describe('Fetchplaces saga', () => {
   const action = {
