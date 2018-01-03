@@ -16,12 +16,11 @@ class GooglePlacesAPI {
             key: process.env.REACT_APP_GOOGLE_PLACES_API_KEY // Append Api key
           })
         })
-        .then(({ status, data }) => {
-          if (status === 200) {
-            resolve(data);
-          } else {
-            reject(new Error('error'));
-          }
+        .then(response => {
+          resolve(response.data);
+        })
+        .catch(error => {
+          reject(error);
         });
     });
   }
