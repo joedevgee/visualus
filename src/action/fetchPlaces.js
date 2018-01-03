@@ -6,7 +6,7 @@ import {
   FETCH_PLACES_FAIL
 } from '../actionType/fetchPlacesActionType';
 
-type BeginFetchPlaces = {
+export type BeginFetchPlaces = {
   type: string,
   payload: {
     input: string,
@@ -14,19 +14,22 @@ type BeginFetchPlaces = {
     types: string
   }
 };
-type CompleteFetchPlaces = {
+export type CompleteFetchPlaces = {
   type: string,
   data: {
     predictions: Array<mixed>,
     status: string
   }
 };
-type FailFetchPlaces = {
+export type FailFetchPlaces = {
   type: string,
   error: string
 };
 
-export type Action = BeginFetchPlaces | CompleteFetchPlaces | FailFetchPlaces;
+export type FetchPlacesAction =
+  | BeginFetchPlaces
+  | CompleteFetchPlaces
+  | FailFetchPlaces;
 
 export function fetchBegin(payload: {
   input: string,

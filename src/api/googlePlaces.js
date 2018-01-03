@@ -1,6 +1,6 @@
 import { URL } from 'url';
 
-class GooglePlaces {
+class GooglePlacesAPI {
   constructor() {
     this.apiEndpoint = new URL(
       'https://maps.googleapis.com/maps/api/place/autocomplete/json'
@@ -26,4 +26,6 @@ class GooglePlaces {
   }
 }
 
-export default new GooglePlaces();
+const GooglePlaces = new GooglePlacesAPI();
+
+export default GooglePlaces;

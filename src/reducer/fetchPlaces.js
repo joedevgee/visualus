@@ -4,7 +4,7 @@ import {
   FETCH_PLACES_COMPLETE,
   FETCH_PLACES_FAIL
 } from '../actionType/fetchPlacesActionType';
-import type { Action } from '../action/fetchPlaces';
+import type { FetchPlacesAction } from '../action/fetchPlaces';
 
 type State = {
   predictions: Array<mixed>,
@@ -22,7 +22,7 @@ const initialState: State = {
 
 export default function fetchPlaces(
   state: State = initialState,
-  action: Action
+  action: FetchPlacesAction
 ): State {
   switch (action.type) {
     case FETCH_PLACES_BEGIN:
