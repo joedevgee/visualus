@@ -1,4 +1,4 @@
-import { fork, takeLatest } from 'redux-saga/effects';
+import { fork } from 'redux-saga/effects';
 import watchFetchPlaces from './fetchPlaces';
 
 export default function* rootSaga() {

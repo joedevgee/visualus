@@ -6,7 +6,7 @@
     "node": ">=9.0"
   },
   "dependencies": {
-    "material-ui": "^0.19.4",
+    "antd": "^3.1.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
@@ -15,10 +15,10 @@
     "redux-saga": "^0.16.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "test:debug": "react-app-rewired --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9009 -s public",
@@ -45,6 +45,7 @@
     "@storybook/addon-actions": "^3.2.15",
     "@storybook/addon-links": "^3.2.15",
     "@storybook/react": "^3.2.15",
+    "babel-plugin-import": "^1.6.3",
     "enzyme": "^3.1.1",
     "enzyme-adapter-react-16": "^1.0.4",
     "fetch-mock": "^5.13.1",
@@ -52,6 +53,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
     "prettier": "^1.8.2",
+    "react-app-rewired": "^1.4.0",
     "react-test-renderer": "^16.1.0",
     "redux-devtools": "^3.4.1",
     "sinon": "^4.1.3",
