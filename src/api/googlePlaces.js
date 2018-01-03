@@ -1,28 +1,29 @@
-import { URL } from 'url';
-
+import axios from 'axios';
 class GooglePlacesAPI {
   constructor() {
-    this.apiEndpoint = new URL(
-      'https://maps.googleapis.com/maps/api/place/autocomplete/json'
-    );
-    // Append api credential
-    this.apiEndpoint.searchParams.append(
-      'key',
-      process.env.REACT_APP_GOOGLE_PLACES_API_KEY
-    );
+    this.apiEndpoint =
+      'https://maps.googleapis.com/maps/api/place/autocomplete/json';
   }
   /**
    * Return location predictions based on input
    * @param {object} params
    */
-  async fetchPlaces(params) {
-    if (params) {
-      Object.keys(params).forEach(key =>
-        this.apiEndpoint.searchParams.append(key, params[key])
-      );
-    }
-    const data = await fetch(this.apiEndpoint);
-    return data;
+  fetchPlaces(params) {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(this.apiEndpoint, {
+          params: Object.assign({}, params, {
+            key: process.env.REACT_APP_GOOGLE_PLACES_API_KEY // Append Api key
+          })
+        })
+        .then(({ status, data }) => {
+          if (status === 200) {
+            resolve(data);
+          } else {
+            reject(new Error('error'));
+          }
+        });
+    });
   }
 }
 
