@@ -1,20 +1,10 @@
 import React from 'react';
+import Home from './wrapper/home/home';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: 'Custom Title'
-    };
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <h1>Title</h1>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <Home />
+  </div>
+);
 
 export default App;
