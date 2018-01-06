@@ -20,7 +20,7 @@ const Home = () => {
           <Menu.Item key="3">nav 3</Menu.Item>
         </Menu>
       </Header>
-      <Content style={{ padding: '0 50px' }}>
+      <Content style={{ padding: '50px' }}>
         <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
           Content
         </div>
