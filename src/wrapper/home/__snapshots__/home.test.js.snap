@@ -36,7 +36,7 @@ exports[`Home wrapper Should match shallow snapshot 1`] = `
   <Adapter
     style={
       Object {
-        "padding": "0 50px",
+        "padding": "50px",
       }
     }
   >
