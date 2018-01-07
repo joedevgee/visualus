@@ -1,65 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home wrapper Should match shallow snapshot 1`] = `
-<Adapter>
-  <Adapter>
-    <span
-      className="logo"
-    />
-    <Menu
-      className=""
-      defaultSelectedKeys={
-        Array [
-          "2",
-        ]
-      }
-      mode="horizontal"
-      prefixCls="ant-menu"
-      style={
-        Object {
-          "lineHeight": "64px",
-        }
-      }
-      theme="dark"
-    >
-      <MenuItem>
-        nav 1
-      </MenuItem>
-      <MenuItem>
-        nav 2
-      </MenuItem>
-      <MenuItem>
-        nav 3
-      </MenuItem>
-    </Menu>
-  </Adapter>
-  <Adapter
-    style={
-      Object {
-        "padding": "50px",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "background": "#fff",
-          "minHeight": 280,
-          "padding": 24,
-        }
-      }
-    >
-      Content
-    </div>
-  </Adapter>
-  <Adapter
-    style={
-      Object {
-        "textAlign": "center",
-      }
-    }
-  >
-    Ant Design ©2016 Created by Ant UED
-  </Adapter>
-</Adapter>
+<h1>
+  This is home
+</h1>
 `;

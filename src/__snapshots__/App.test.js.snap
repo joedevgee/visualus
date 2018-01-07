@@ -1,9 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App Matches snapshot 1`] = `
-<div
-  className="App"
->
-  <Home />
-</div>
+<Adapter>
+  <Adapter>
+    <span
+      className="logo"
+    />
+    <Menu
+      className=""
+      defaultSelectedKeys={
+        Array [
+          "1",
+        ]
+      }
+      mode="horizontal"
+      prefixCls="ant-menu"
+      style={
+        Object {
+          "lineHeight": "64px",
+        }
+      }
+      theme="dark"
+    >
+      <MenuItem>
+        <Link
+          replace={false}
+          to="/"
+        >
+          Home
+        </Link>
+      </MenuItem>
+      <MenuItem>
+        <Link
+          replace={false}
+          to="/education"
+        >
+          Education
+        </Link>
+      </MenuItem>
+    </Menu>
+  </Adapter>
+  <Adapter
+    style={
+      Object {
+        "padding": "50px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#fff",
+          "minHeight": 280,
+          "padding": 24,
+        }
+      }
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/education"
+      />
+    </div>
+  </Adapter>
+  <Adapter
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    VisualUSA ©2017 Created by Joey Liu
+  </Adapter>
+</Adapter>
 `;
