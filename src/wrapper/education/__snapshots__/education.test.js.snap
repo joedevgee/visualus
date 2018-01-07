@@ -1,7 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Education wrapper Should match shallow snapshot 1`] = `
-<h1>
-  This is education
-</h1>
+<Adapter
+  style={
+    Object {
+      "padding": "8px",
+    }
+  }
+>
+  <div
+    className="education"
+  >
+    <h2>
+      This is education
+    </h2>
+  </div>
+</Adapter>
 `;

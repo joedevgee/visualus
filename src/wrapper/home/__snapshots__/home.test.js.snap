@@ -1,7 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home wrapper Should match shallow snapshot 1`] = `
-<h1>
-  This is home
-</h1>
+<Adapter
+  style={
+    Object {
+      "padding": "50px",
+    }
+  }
+>
+  <div
+    className="home"
+  >
+    <h1>
+      This is home
+    </h1>
+  </div>
+</Adapter>
 `;
