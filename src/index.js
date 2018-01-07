@@ -11,7 +11,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 const sagaMiddleware = createSagaMiddleware();
-let store = createStore(reduxApp, applyMiddleware(sagaMiddleware));
+const store = createStore(reduxApp, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(

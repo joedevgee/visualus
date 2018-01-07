@@ -1,1 +1,7 @@
+@import '~antd/dist/antd.css';
 
+.education {
+  background: white;
+  padding: 24px;
+  min-height: 350px;
+}

@@ -2,7 +2,14 @@
 
 exports[`App Matches snapshot 1`] = `
 <Adapter>
-  <Adapter>
+  <Adapter
+    style={
+      Object {
+        "position": "fixed",
+        "width": "100%",
+      }
+    }
+  >
     <span
       className="logo"
     />
@@ -40,33 +47,15 @@ exports[`App Matches snapshot 1`] = `
       </MenuItem>
     </Menu>
   </Adapter>
-  <Adapter
-    style={
-      Object {
-        "padding": "50px",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "background": "#fff",
-          "minHeight": 280,
-          "padding": 24,
-        }
-      }
-    >
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/"
-      />
-      <Route
-        component={[Function]}
-        path="/education"
-      />
-    </div>
-  </Adapter>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    path="/education"
+  />
   <Adapter
     style={
       Object {

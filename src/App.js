@@ -8,10 +8,10 @@ import Education from './wrapper/education/education';
 import './App.css';
 
 const App = () => {
-  const { Header, Content, Footer } = Layout;
+  const { Header, Footer } = Layout;
   return (
     <Layout>
-      <Header>
+      <Header style={{ position: 'fixed', width: '100%' }}>
         <span className="logo" />
         <Menu
           theme="dark"
@@ -27,12 +27,8 @@ const App = () => {
           </Menu.Item>
         </Menu>
       </Header>
-      <Content style={{ padding: '50px' }}>
-        <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
-          <Route exact path="/" component={Home} />
-          <Route path="/education" component={Education} />
-        </div>
-      </Content>
+      <Route exact path="/" component={Home} />
+      <Route path="/education" component={Education} />
       <Footer style={{ textAlign: 'center' }}>
         VisualUSA ©2017 Created by Joey Liu
       </Footer>
