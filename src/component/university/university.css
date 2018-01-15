@@ -1,0 +1,12 @@
+.search-autocomplete {
+  margin: 0 auto;
+  width: 90%;
+}
+.search-input {
+  height: 100px;
+}
+.search-prefix-icon {
+  color: #6e6e6e;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  font-size: 16px;
+}

@@ -11,9 +11,7 @@ exports[`Education wrapper Should match shallow snapshot 1`] = `
   <div
     className="education"
   >
-    <h2>
-      This is education
-    </h2>
+    <University />
   </div>
 </Adapter>
 `;
