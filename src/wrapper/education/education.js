@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { Layout } from 'antd';
+import University from '../../component/university/university';
 
 import './education.css';
 
@@ -9,7 +10,7 @@ const Education = () => {
   return (
     <Content style={{ padding: '8px' }}>
       <div className="education">
-        <h2>This is education</h2>
+        <University />
       </div>
     </Content>
   );
