@@ -1,8 +1,8 @@
 import { fork } from 'redux-saga/effects';
-import watchFetchPlaces from './fetchPlaces';
+import watchFetchUniversity from './fetchUniversity';
 
 function* rootSaga() {
-  yield fork(watchFetchPlaces);
+  yield fork(watchFetchUniversity);
 }
 
 export default rootSaga;

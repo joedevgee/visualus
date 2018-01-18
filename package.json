@@ -38,10 +38,19 @@
       "!src/registerServiceWorker.{js,jsx}",
       "!src/setupTests.{js,jsx}",
       "!src/reducer/index.{js,jsx}",
+      "!src/type/*.js",
       "src/**/*.{js,jsx}",
       "!src/stories/**",
       "!src/**/*.story.{js,jsx}"
-    ]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.15",
@@ -58,6 +67,7 @@
     "react-app-rewired": "^1.4.0",
     "react-test-renderer": "^16.1.0",
     "redux-devtools": "^3.4.1",
+    "redux-mock-store": "^1.4.0",
     "sinon": "^4.1.3",
     "storybook": "^1.0.0"
   }
