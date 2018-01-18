@@ -1,60 +1,16 @@
 // @flow
+import type { UniversityActions, UniversityList } from '../type/university';
 
-import {
-  FETCH_UNIVERSITY_NAME_BEGIN,
-  FETCH_UNIVERSITY_NAME_COMPLETE,
-  FETCH_UNIVERSITY_NAME_FAIL
-} from '../actionType/fetchUniversityActionType';
-
-type BeginFetchUniversityNames = {
-  type: string,
-  payload: {
-    input: string
-  }
-};
-type CompleteFetchUniversityNames = {
-  type: string,
-  data: Array<{
-    id: number,
-    name: string,
-    alias: string
-  }>
-};
-type FailFetchUniversity = {
-  type: string,
-  error: string
+export const beginFetchUniversity = (input: string): UniversityActions => {
+  return { type: 'FETCH_UNIVERSITY_BEGIN', input: input };
 };
 
-export type fetchUniversityAction =
-  | BeginFetchUniversityNames
-  | CompleteFetchUniversityNames
-  | FailFetchUniversity;
+export const completeFetchUniversity = (
+  result: UniversityList
+): UniversityActions => {
+  return { type: 'FETCH_UNIVERSITY_COMPLETE', result: result };
+};
 
-export function fetchUniversityBegin(payload: {
-  input: string
-}): BeginFetchUniversityNames {
-  return {
-    type: FETCH_UNIVERSITY_NAME_BEGIN,
-    payload
-  };
-}
-
-export function fetchUniversityComplete(
-  data: Array<{
-    id: number,
-    name: string,
-    alias: string
-  }>
-): CompleteFetchUniversityNames {
-  return {
-    type: FETCH_UNIVERSITY_NAME_COMPLETE,
-    data
-  };
-}
-
-export function fetchUniversityFail(error: string): FailFetchUniversity {
-  return {
-    type: FETCH_UNIVERSITY_NAME_FAIL,
-    error
-  };
-}
+export const failFetchUniversity = (error: string): UniversityActions => {
+  return { type: 'FETCH_UNIVERSITY_FAIL', error: error };
+};

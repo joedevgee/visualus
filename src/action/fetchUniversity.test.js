@@ -1,19 +1,16 @@
 import * as actions from './fetchUniversity';
-import * as actionTypes from '../actionType/fetchUniversityActionType';
 
 describe('Fetch university actions', () => {
   it('should create an action to start fetch names', () => {
-    const payload = {
-      input: 'uc'
-    };
+    const input = 'uc';
     const expectedAction = {
-      type: actionTypes.FETCH_UNIVERSITY_NAME_BEGIN,
-      payload
+      type: 'FETCH_UNIVERSITY_BEGIN',
+      input
     };
-    expect(actions.fetchUniversityBegin(payload)).toEqual(expectedAction);
+    expect(actions.beginFetchUniversity(input)).toEqual(expectedAction);
   });
   it('should create an action to complete fetching names', () => {
-    const data = [
+    const result = [
       {
         id: 1,
         name: 'University of California, Los Angelas',
@@ -21,17 +18,17 @@ describe('Fetch university actions', () => {
       }
     ];
     const expectedAction = {
-      type: actionTypes.FETCH_UNIVERSITY_NAME_COMPLETE,
-      data
+      type: 'FETCH_UNIVERSITY_COMPLETE',
+      result
     };
-    expect(actions.fetchUniversityComplete(data)).toEqual(expectedAction);
+    expect(actions.completeFetchUniversity(result)).toEqual(expectedAction);
   });
   it('should create an action to fail fetching names', () => {
     const error = 'error';
     const expectedAction = {
-      type: actionTypes.FETCH_UNIVERSITY_NAME_FAIL,
+      type: 'FETCH_UNIVERSITY_FAIL',
       error
     };
-    expect(actions.fetchUniversityFail(error)).toEqual(expectedAction);
+    expect(actions.failFetchUniversity(error)).toEqual(expectedAction);
   });
 });
