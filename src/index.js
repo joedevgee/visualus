@@ -1,25 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import createSagaMiddleware, { END } from 'redux-saga';
 import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
+
+import rootReducer from './reducer';
+import Root from './container/root/root';
 import rootSaga from './saga';
-import reduxApp from './reducer';
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reduxApp, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(rootSaga);
+const configureStore = preLoadedState => {
+  const sagaMiddleware = createSagaMiddleware();
+  const store = createStore(
+    rootReducer,
+    preLoadedState,
+    applyMiddleware(sagaMiddleware)
+  );
+  store.runSaga = sagaMiddleware.run;
+  store.close = () => store.dispatch(END);
+  return store;
+};
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>,
-  document.getElementById('root')
-);
+const store = configureStore(window.__INITIAL_STATE__);
+store.runSaga(rootSaga);
+
+ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 registerServiceWorker();

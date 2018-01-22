@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import Home from './wrapper/home/home';
-import EducationContainer from './container/education/education';
+import Education from './container/education/education';
 
 import './App.css';
 
@@ -28,7 +28,7 @@ const App = () => {
         </Menu>
       </Header>
       <Route exact path="/" component={Home} />
-      <Route path="/education" component={EducationContainer} />
+      <Route path="/education" component={Education} />
       <Footer style={{ textAlign: 'center' }}>
         VisualUSA ©2017 Created by Joey Liu
       </Footer>

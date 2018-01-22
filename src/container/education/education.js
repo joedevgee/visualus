@@ -10,8 +10,8 @@ import Education from '../../wrapper/education/education';
 
 const mapStateToProps = (state: State) => {
   return {
-    loading: state.loading,
-    universityList: state.universityList
+    loading: state.Education.loading,
+    universityList: state.Education.universityList
   };
 };
 
