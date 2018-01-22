@@ -7,7 +7,15 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <University
     loading={false}
     onInputValueChange={[Function]}
-    valueList={Array []}
+    valueList={
+        Array [
+            Object {
+              "alias": "BU",
+              "id": 1,
+              "name": "Boston University",
+            },
+          ]
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -28,7 +36,11 @@ ShallowWrapper {
         <AutoComplete
           choiceTransitionName="zoom"
           className="search-autocomplete"
-          dataSource={Array []}
+          dataSource={
+                    Array [
+                              "Boston University",
+                            ]
+          }
           filterOption={false}
           onChange={[Function]}
           optionLabelProp="children"
@@ -86,7 +98,9 @@ ShallowWrapper {
 />,
           "choiceTransitionName": "zoom",
           "className": "search-autocomplete",
-          "dataSource": Array [],
+          "dataSource": Array [
+            "Boston University",
+          ],
           "filterOption": false,
           "onChange": [Function],
           "optionLabelProp": "children",
@@ -133,7 +147,11 @@ ShallowWrapper {
           <AutoComplete
             choiceTransitionName="zoom"
             className="search-autocomplete"
-            dataSource={Array []}
+            dataSource={
+                        Array [
+                                    "Boston University",
+                                  ]
+            }
             filterOption={false}
             onChange={[Function]}
             optionLabelProp="children"
@@ -191,7 +209,9 @@ ShallowWrapper {
 />,
             "choiceTransitionName": "zoom",
             "className": "search-autocomplete",
-            "dataSource": Array [],
+            "dataSource": Array [
+              "Boston University",
+            ],
             "filterOption": false,
             "onChange": [Function],
             "optionLabelProp": "children",

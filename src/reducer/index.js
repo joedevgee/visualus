@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import fetchPlaces from './fetchPlaces';
 import fetchUniversity from './fetchUniversity';
 
-const reduxApp = combineReducers({
-  fetchPlaces,
-  fetchUniversity
+const rootReducer = combineReducers({
+  Education: fetchUniversity
 });
 
-export default reduxApp;
+export default rootReducer;

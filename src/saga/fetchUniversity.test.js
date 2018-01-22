@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import watchFetchUniversity, { fetchUniversity } from './fetchUniversity';
-import EducationAPIHelper from '../api/eduData';
+import { universityList } from '../api/eduData';
 
 describe('FetchUniversity saga', () => {
   const action = { input: 'uc' };
@@ -9,19 +9,17 @@ describe('FetchUniversity saga', () => {
     const generator = watchFetchUniversity();
     output = generator.next().value;
     expect(output).toEqual(
-      takeLatest('FETCH_UNIVERSITY_NAME_BEGIN', fetchUniversity)
+      takeLatest('FETCH_UNIVERSITY_BEGIN', fetchUniversity)
     );
   });
   it('Should call education API', () => {
     const generator = fetchUniversity(action);
     output = generator.next().value;
-    expect(output).toEqual(
-      call(EducationAPIHelper.fetchUniversityList, action.input)
-    );
+    expect(output).toEqual(call(universityList, action.input));
   });
   it('Should return a FETCH_UNIVERSITY_COMPLETE action after success api call', () => {
     const generator = fetchUniversity(action);
-    const data = [
+    const result = [
       {
         id: 1,
         name: 'name',
@@ -29,10 +27,10 @@ describe('FetchUniversity saga', () => {
       }
     ];
     generator.next();
-    output = generator.next(data).value;
+    output = generator.next(result).value;
     const expectedResult = put({
-      type: 'FETCH_UNIVERSITY_NAME_COMPLETE',
-      data
+      type: 'FETCH_UNIVERSITY_COMPLETE',
+      result
     });
     expect(output).toEqual(expectedResult);
   });
@@ -41,7 +39,7 @@ describe('FetchUniversity saga', () => {
     generator.next();
     output = generator.throw('API returned error').value;
     const expectedResult = put({
-      type: 'FETCH_UNIVERSITY_NAME_FAIL',
+      type: 'FETCH_UNIVERSITY_FAIL',
       error: 'API returned error'
     });
     expect(output).toEqual(expectedResult);
