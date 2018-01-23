@@ -6,14 +6,15 @@ import type { University } from '../../type/university';
 import './card.css';
 
 type Props = {
-  university: University
+  +university: University
 };
 
 const Card = ({ university }: Props) => {
   const Item = List.Item;
+  const Meta = Item.Meta;
   return (
     <Item key={university.id}>
-      <Item.Meta title={university.name} />
+      <Meta title={university.name} />
       {university.alias}
     </Item>
   );

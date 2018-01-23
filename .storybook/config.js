@@ -1,10 +1,9 @@
 import React from "react";
 import { configure, addDecorator } from "@storybook/react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 addDecorator(story => (
   <div style={{ textAlign: "center" }}>
-    <MuiThemeProvider>{story()}</MuiThemeProvider>
+    {story()}
   </div>
 ));
 
