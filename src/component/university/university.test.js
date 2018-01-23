@@ -36,11 +36,11 @@ describe('University component', () => {
     const { wrapper } = setup();
     expect(wrapper).toMatchSnapshot();
   });
-  it('Should fire onInputValueChange', () => {
+  it('Should fire onInputValueChange when entered search value', () => {
     const { enzymeWrapper, props } = setup();
-    const input = enzymeWrapper.find('AutoComplete');
+    const input = enzymeWrapper.find('Search');
     expect(props.onInputValueChange).not.toHaveBeenCalled();
-    input.props().onChange('test');
+    input.props().onSearch('test');
     expect(props.onInputValueChange).toHaveBeenCalledTimes(1);
   });
 });

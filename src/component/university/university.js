@@ -1,40 +1,59 @@
 // @flow
 import React from 'react';
-import { AutoComplete, Input, Icon } from 'antd';
+import { Input, Row, Col, List } from 'antd';
 
-import type { UniversityList } from '../../type/university';
+import type {
+  UniversityList,
+  University as UniversityType
+} from '../../type/university';
+import Card from '../universityCard/card';
 
 import './university.css';
 
 export type Props = {
-  loading: boolean,
-  valueList: UniversityList,
-  onInputValueChange: (input: string) => void
+  +loading: boolean,
+  +valueList: UniversityList,
+  +onInputValueChange: (input: string) => void
 };
 
 const University = ({ loading, valueList, onInputValueChange }: Props) => {
-  function renderSearchField() {
-    const dataSource = valueList.map(v => v.name);
+  const renderSearchField = () => {
+    const Search = Input.Search;
     return (
-      <AutoComplete
-        className="search-autocomplete"
-        size="large"
-        dataSource={dataSource}
-        onChange={onInputValueChange}
-      >
-        <Input
-          className="search-input"
-          placeholder="Search by name. e.g. UCLA"
-          prefix={<Icon type="search" className="search-prefix-icon" />}
-        />
-      </AutoComplete>
+      <Row>
+        <Col
+          sm={{ span: 24, offset: 0 }}
+          md={{ span: 18, offset: 3 }}
+          lg={{ span: 16, offset: 4 }}
+          xl={{ span: 14, offset: 5 }}
+        >
+          <Search
+            placeholder="Search by name. e.g. Boston University"
+            onSearch={(value: string) => onInputValueChange(value)}
+            enterButton
+          />
+        </Col>
+      </Row>
     );
-  }
+  };
+
+  const renderUniversityList = () => {
+    return (
+      <List
+        itemLayout="vertical"
+        size="large"
+        dataSource={valueList}
+        renderItem={(university: UniversityType) => (
+          <Card university={university} />
+        )}
+      />
+    );
+  };
 
   return (
     <div>
-      <h1>University</h1>
       {renderSearchField()}
+      {renderUniversityList()}
     </div>
   );
 };
