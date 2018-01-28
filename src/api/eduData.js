@@ -12,7 +12,8 @@ export const universityList = input =>
           {
             api_key: process.env.REACT_APP_GOV_DATA_API_KEY, // Appending api key
             'school.name': input, // Append user input
-            _fields: 'id,school.name,school.alias' // Default: return id, school name and short name
+            _fields:
+              'id,school.name,school.alias,school.city,school.state,school.school_url,2015.student.size,2015.admissions.admission_rate.overall,2015.cost.attendance.academic_year'
           }
         )
       })
@@ -21,10 +22,23 @@ export const universityList = input =>
           const id = school['id'];
           const name = school['school.name'];
           const alias = school['school.alias'];
+          const city = school['school.city'];
+          const state = school['school.state'];
+          const website = school['school.school_url'];
+          const studentSize = school['2015.student.size'];
+          const admissionRate =
+            school['2015.admissions.admission_rate.overall'];
+          const annualCost = school['2015.cost.attendance.academic_year'];
           return {
             id: id,
             name: name,
-            alias: alias
+            alias: alias,
+            city: city,
+            state: state,
+            website: website,
+            studentSize: studentSize,
+            admissionRate: admissionRate,
+            annualCost: annualCost
           };
         });
         resolve(list);

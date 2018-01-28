@@ -29,7 +29,7 @@ yarn test --coverage
 To add external package, e.g. enzyme
 
 ```sh
-yarn add enzeme --dev
+yarn add enzyme --dev
 ```
 
 To run storybook UI testing
