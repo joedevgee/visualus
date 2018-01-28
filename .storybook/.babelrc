@@ -1,3 +1,6 @@
 {
-  "presets": ["react-app", "flow"]
+  "presets": [
+    "react-app",
+    "flow"
+  ]
 }
