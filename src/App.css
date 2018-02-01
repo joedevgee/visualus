@@ -5,7 +5,3 @@
   margin: 16px 24px 16px 0;
   float: left;
 }
-
-.ant-layout-content {
-  margin-top: 64px; /* Because header is fixed on top with line height of 64px */
-}

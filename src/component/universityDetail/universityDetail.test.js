@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Card from './card';
+import UniversityDetail from './universityDetail';
 
-describe('UniversityCard component with single data', () => {
+describe('UniversityDetail component', () => {
   const university = {
     id: 1,
     name: 'Boston University',
@@ -16,10 +16,6 @@ describe('UniversityCard component with single data', () => {
   };
   let wrapper;
   it('should render without crashing', () => {
-    shallow(<Card university={university} />);
-  });
-  it('should match snapshot', () => {
-    wrapper = shallow(<Card university={university} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<UniversityDetail university={university} />);
   });
 });

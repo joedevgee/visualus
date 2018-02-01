@@ -14,7 +14,8 @@ const configureStore = preLoadedState => {
   const store = createStore(
     rootReducer,
     preLoadedState,
-    applyMiddleware(sagaMiddleware)
+    applyMiddleware(sagaMiddleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   );
   store.runSaga = sagaMiddleware.run;
   store.close = () => store.dispatch(END);

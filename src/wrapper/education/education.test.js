@@ -1,30 +1,27 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import Education from './education';
+import University from '../../component/university/university';
+import UniversityDetail from '../../component/universityDetail/universityDetail';
 
-const setup = (setupProps = {}) => {
+describe('Education wrapper', () => {
   const defaultProps = {
     loading: false,
     universityList: [],
     onInputValueChange: jest.fn()
   };
-  const props = { ...defaultProps, ...setupProps };
-  const wrapper = shallow(
-    <Education
-      loading={props.loading}
-      universityList={props.universityList}
-      onInputValueChange={props.onInputValueChange}
-    />
-  );
-  return {
-    props,
-    wrapper
-  };
-};
-
-describe('Education wrapper', () => {
-  it('renders without crashing', () => {
-    const { wrapper } = setup();
+  let wrapper;
+  it('default should render universityList component', () => {
+    wrapper = shallow(
+      <MemoryRouter>
+        <Education
+          loading={defaultProps.loading}
+          universityList={defaultProps.universityList}
+          onInputValueChange={defaultProps.onInputValueChange}
+        />
+      </MemoryRouter>
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });

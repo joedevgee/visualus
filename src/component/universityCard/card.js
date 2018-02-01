@@ -9,18 +9,26 @@ type Props = {
   +university: University
 };
 
+type IconTextProps = {
+  +type: string,
+  +text: string,
+  +link?: string
+};
+
 const Card = ({ university }: Props) => {
   const Item = List.Item;
   const Meta = Item.Meta;
+  /* istanbul ignore next */
+  const IconText = ({ type, text, link }: IconTextProps) => (
+    <span className={link ? 'linkAction' : 'noneLinkAction'}>
+      <Icon type={type} className="iconText" style={{ marginRight: 8 }}>
+        <p className="iconText-data">{text}</p>
+      </Icon>
+    </span>
+  );
+
   const renderActions = () => {
     const actionList = [];
-    const IconText = ({ type, text, link }) => (
-      <span className={link ? 'linkAction' : null}>
-        <Icon type={type} className="iconText" style={{ marginRight: 8 }}>
-          <p className="iconText-data">{text}</p>
-        </Icon>
-      </span>
-    );
     const floatFormatter = new Intl.NumberFormat('en-US', {
       style: 'percent',
       maximumFractionDigits: 0
@@ -33,8 +41,9 @@ const Card = ({ university }: Props) => {
       minimumFractionDigits: 0
     });
     if (university.city || university.state) {
-      const location = `${university.city}, ${university.state}`;
-      actionList.push(<IconText type="home" text={location} />);
+      const location: string = `${university.city}, ${university.state}`;
+      const homeType: string = 'home';
+      actionList.push(<IconText type={homeType} text={location} />);
     }
 
     if (university.admissionRate) {
