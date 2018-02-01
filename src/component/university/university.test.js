@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import University from './university';
-import { wrap } from 'module';
 
 const setup = (setupProps = {}) => {
   const defaultProps = {

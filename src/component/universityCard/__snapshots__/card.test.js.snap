@@ -1,15 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UniversityCard component should match snapshot 1`] = `
+exports[`UniversityCard component with single data should match snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Card
     university={
         Object {
+            "admissionRate": 0.35,
             "alias": "BU",
+            "annualCost": 96000,
+            "city": "Boston",
             "id": 1,
             "name": "Boston University",
+            "state": "MA",
+            "studentSize": 1000,
+            "website": "www.bu.edu",
           }
     }
 />,
@@ -25,7 +31,29 @@ ShallowWrapper {
     "key": "1",
     "nodeType": "class",
     "props": Object {
-      "actions": Array [],
+      "actions": Array [
+        <IconText
+          text="Boston, MA"
+          type="home"
+/>,
+        <IconText
+          text="35%"
+          type="usergroup-add"
+/>,
+        <IconText
+          text="$96,000"
+          type="shopping-cart"
+/>,
+        <IconText
+          text="1,000"
+          type="user"
+/>,
+        <IconText
+          link="www.bu.edu"
+          text="www.bu.edu"
+          type="global"
+/>,
+      ],
       "children": <Meta
         avatar={
                 <Avatar
@@ -66,7 +94,29 @@ ShallowWrapper {
       "key": "1",
       "nodeType": "class",
       "props": Object {
-        "actions": Array [],
+        "actions": Array [
+          <IconText
+            text="Boston, MA"
+            type="home"
+/>,
+          <IconText
+            text="35%"
+            type="usergroup-add"
+/>,
+          <IconText
+            text="$96,000"
+            type="shopping-cart"
+/>,
+          <IconText
+            text="1,000"
+            type="user"
+/>,
+          <IconText
+            link="www.bu.edu"
+            text="www.bu.edu"
+            type="global"
+/>,
+        ],
         "children": <Meta
           avatar={
                     <Avatar
