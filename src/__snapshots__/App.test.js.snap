@@ -2,52 +2,7 @@
 
 exports[`App Matches snapshot 1`] = `
 <Adapter>
-  <Adapter
-    style={
-      Object {
-        "position": "fixed",
-        "width": "100%",
-        "zIndex": 100,
-      }
-    }
-  >
-    <span
-      className="logo"
-    />
-    <Menu
-      className=""
-      defaultSelectedKeys={
-        Array [
-          "1",
-        ]
-      }
-      mode="horizontal"
-      prefixCls="ant-menu"
-      style={
-        Object {
-          "lineHeight": "64px",
-        }
-      }
-      theme="dark"
-    >
-      <MenuItem>
-        <Link
-          replace={false}
-          to="/"
-        >
-          Home
-        </Link>
-      </MenuItem>
-      <MenuItem>
-        <Link
-          replace={false}
-          to="/education"
-        >
-          Education
-        </Link>
-      </MenuItem>
-    </Menu>
-  </Adapter>
+  <Header />
   <Adapter
     style={
       Object {

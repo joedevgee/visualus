@@ -10,16 +10,10 @@ import './education.css';
 export type Props = {
   loading: Loading,
   universityList: UniversityList,
-  onInputValueChange: (input: string) => void,
-  match: any
+  onInputValueChange: (input: string) => void
 };
 
-const Education = ({
-  loading,
-  universityList,
-  onInputValueChange,
-  match
-}: Props) => {
+const Education = ({ loading, universityList, onInputValueChange }: Props) => {
   const renderUniversity = () => (
     <University
       loading={loading}
@@ -30,8 +24,8 @@ const Education = ({
   return (
     <div className="education">
       <Switch>
-        <Route exact path={match.url} render={renderUniversity} />
-        <Route path={`${match.url}/:topicId`} component={UniversityDetail} />
+        <Route exact path="/education" render={renderUniversity} />
+        <Route path="/education/:topicId" component={UniversityDetail} />
       </Switch>
     </div>
   );

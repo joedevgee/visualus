@@ -1,12 +1,14 @@
 // @flow
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { List, Avatar, Icon } from 'antd';
 import type { University } from '../../type/university';
 
 import './card.css';
 
 type Props = {
-  +university: University
+  +university: University,
+  history?: any
 };
 
 type IconTextProps = {
@@ -15,7 +17,7 @@ type IconTextProps = {
   +link?: string
 };
 
-const Card = ({ university }: Props) => {
+export const Card = ({ university, history }: Props) => {
   const Item = List.Item;
   const Meta = Item.Meta;
   /* istanbul ignore next */
@@ -69,8 +71,18 @@ const Card = ({ university }: Props) => {
     }
     return actionList;
   };
+  const navigateToDetail = () => {
+    /* istanbul ignore else */
+    if (history) {
+      history.push(`${history.location.pathname}/${university.id}`);
+    }
+  };
   return (
-    <Item key={university.id} actions={renderActions()}>
+    <Item
+      key={university.id}
+      actions={renderActions()}
+      onClick={navigateToDetail}
+    >
       <Meta
         title={university.name}
         avatar={<Avatar>{university.alias}</Avatar>}
@@ -79,4 +91,4 @@ const Card = ({ university }: Props) => {
   );
 };
 
-export default Card;
+export default withRouter(Card);
