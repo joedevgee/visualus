@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import University from './university';
 
 const setup = (setupProps = {}) => {
@@ -22,7 +23,11 @@ const setup = (setupProps = {}) => {
       onInputValueChange={props.onInputValueChange}
     />
   );
-  const enzymeWrapper = mount(<University {...props} />);
+  const enzymeWrapper = mount(
+    <MemoryRouter>
+      <University {...props} />
+    </MemoryRouter>
+  );
   return {
     props,
     wrapper,
