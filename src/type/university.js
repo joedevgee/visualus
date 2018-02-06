@@ -28,7 +28,8 @@ export type UniversityList = Array<University>;
 
 export type UniversityListState = {
   +universityList: UniversityList,
-  +loading: Loading
+  +loading: Loading,
+  +selectedId?: Id
 };
 
 // Action
@@ -45,8 +46,13 @@ type FailFetchUniversity = {
   type: 'FETCH_UNIVERSITY_FAIL',
   error: string
 };
+type SetSelectedUniversity = {
+  type: 'SET_SELECTED_UNIVERSITY',
+  id: Id
+};
 
 export type UniversityActions =
   | BeginFetchUniversity
   | CompleteFetchUniversity
-  | FailFetchUniversity;
+  | FailFetchUniversity
+  | SetSelectedUniversity;

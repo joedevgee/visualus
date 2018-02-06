@@ -2,12 +2,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { List, Avatar, Icon } from 'antd';
-import type { University } from '../../type/university';
+import type { University, Id } from '../../type/university';
 
 import './card.css';
 
 type Props = {
   +university: University,
+  +selectUniversity: (id: Id) => void,
   history?: any
 };
 
@@ -17,7 +18,7 @@ type IconTextProps = {
   +link?: string
 };
 
-export const Card = ({ university, history }: Props) => {
+export const Card = ({ university, history, selectUniversity }: Props) => {
   const Item = List.Item;
   const Meta = Item.Meta;
   /* istanbul ignore next */
@@ -72,6 +73,7 @@ export const Card = ({ university, history }: Props) => {
     return actionList;
   };
   const navigateToDetail = () => {
+    selectUniversity(university.id);
     /* istanbul ignore else */
     if (history) {
       history.push(`${history.location.pathname}/${university.id}`);

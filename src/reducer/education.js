@@ -9,7 +9,7 @@ const defaultState: UniversityListState = {
   universityList: []
 };
 
-const university = (
+const education = (
   state: UniversityListState = defaultState,
   action: UniversityActions
 ): UniversityListState => {
@@ -30,9 +30,15 @@ const university = (
         ...state,
         loading: false
       };
+    case 'SET_SELECTED_UNIVERSITY':
+      return {
+        ...state,
+        loading: false,
+        selectedId: action.id
+      };
     default:
       return state;
   }
 };
 
-export default university;
+export default education;
