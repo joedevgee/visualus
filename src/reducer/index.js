@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import fetchUniversity from './fetchUniversity';
+import education from './education';
 
 const rootReducer = combineReducers({
-  Education: fetchUniversity
+  Education: education
 });
 
 export default rootReducer;

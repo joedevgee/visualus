@@ -1,15 +1,15 @@
 // @flow
 import React from 'react';
-// import type { University } from '../../type/university'
+import type { University } from '../../type/university';
 
 import './universityDetail.css';
 
-// type Props = {
-//     university: University
-// }
+type Props = {
+  +university: University
+};
 
-const UniversityDetail = () => {
-  return <h1>Display University detail here</h1>;
+const UniversityDetail = ({ university }: Props) => {
+  return <h1>{university.name}</h1>;
 };
 
 export default UniversityDetail;

@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 
 import Education from './education';
 import { beginFetchUniversity } from '../../action/fetchUniversity';
+import { setSelectUniversity } from '../../action/selectUniversity';
 
 const setup = (setupProps = {}) => {
   const store = configureStore()({
@@ -45,5 +46,10 @@ describe('Education container', () => {
     const { wrapper, store } = setup();
     wrapper.props().onInputValueChange('test');
     expect(store.dispatch).toHaveBeenCalledWith(beginFetchUniversity('test'));
+  });
+  it('Should dispatch set select university action', () => {
+    const { wrapper, store } = setup();
+    wrapper.props().onUniversitySelected(1);
+    expect(store.dispatch).toHaveBeenCalledWith(setSelectUniversity(1));
   });
 });

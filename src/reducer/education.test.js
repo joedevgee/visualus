@@ -1,6 +1,6 @@
-import reducer from './fetchUniversity';
+import reducer from './education';
 
-describe('Fetch university reducer', () => {
+describe('Education reducer', () => {
   it('Should return default state', () => {
     const expectedState = {
       loading: false,
@@ -47,5 +47,13 @@ describe('Fetch university reducer', () => {
     };
     const state = reducer(undefined, action);
     expect(state.loading).toEqual(false);
+  });
+  it('Should set the selectedId when user make the selection', () => {
+    const action = {
+      type: 'SET_SELECTED_UNIVERSITY',
+      id: 123
+    };
+    const state = reducer(undefined, action);
+    expect(state.selectedId).toEqual(action.id);
   });
 });

@@ -30,6 +30,8 @@ ShallowWrapper {
     "props": Object {
       "loading": false,
       "onInputValueChange": [Function],
+      "onUniversitySelected": [Function],
+      "selectedUniversity": null,
       "store": Object {
         "clearActions": [Function],
         "dispatch": [Function],
@@ -87,6 +89,8 @@ ShallowWrapper {
       "props": Object {
         "loading": false,
         "onInputValueChange": [Function],
+        "onUniversitySelected": [Function],
+        "selectedUniversity": null,
         "store": Object {
           "clearActions": [Function],
           "dispatch": [Function],

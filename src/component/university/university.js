@@ -4,7 +4,8 @@ import { Input, Row, Col, List } from 'antd';
 
 import type {
   UniversityList,
-  University as UniversityType
+  University as UniversityType,
+  Id
 } from '../../type/university';
 import Card from '../universityCard/card';
 
@@ -13,10 +14,16 @@ import './university.css';
 export type Props = {
   +loading: boolean,
   +valueList: UniversityList,
-  +onInputValueChange: (input: string) => void
+  +onInputValueChange: (input: string) => void,
+  +onUniversitySelected: (id: Id) => void
 };
 
-const University = ({ loading, valueList, onInputValueChange }: Props) => {
+const University = ({
+  loading,
+  valueList,
+  onInputValueChange,
+  onUniversitySelected
+}: Props) => {
   const renderSearchField = () => {
     const Search = Input.Search;
     return (
@@ -44,7 +51,10 @@ const University = ({ loading, valueList, onInputValueChange }: Props) => {
         size="large"
         dataSource={valueList}
         renderItem={(university: UniversityType) => (
-          <Card university={university} />
+          <Card
+            university={university}
+            selectUniversity={onUniversitySelected}
+          />
         )}
       />
     );

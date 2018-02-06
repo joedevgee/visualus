@@ -6,7 +6,6 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducer';
 import Root from './container/root/root';
 import rootSaga from './saga';
-import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 const configureStore = preLoadedState => {
