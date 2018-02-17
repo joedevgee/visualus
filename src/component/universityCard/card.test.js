@@ -47,6 +47,6 @@ describe('UniversityCard component with single data', () => {
     );
     wrapper.simulate('click');
     const history = wrapper.find(Card).props().history;
-    expect(history.location.pathname).toEqual(`/education/${university.id}`);
+    expect(history.location.pathname).toEqual(`/education/boston-university`);
   });
 });

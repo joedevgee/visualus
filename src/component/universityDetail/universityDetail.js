@@ -9,7 +9,12 @@ type Props = {
 };
 
 const UniversityDetail = ({ university }: Props) => {
-  return <h1>{university.name}</h1>;
+  return (
+    <div>
+      <h1>{university.name}</h1>
+      <h2>{university.detail.student.size[2010]}</h2>
+    </div>
+  );
 };
 
 export default UniversityDetail;

@@ -56,4 +56,30 @@ describe('Education reducer', () => {
     const state = reducer(undefined, action);
     expect(state.selectedId).toEqual(action.id);
   });
+  it('Should update selected university with detail in the university list', () => {
+    const originalState = {
+      universityList: [
+        {
+          id: 1,
+          name: 'first'
+        },
+        {
+          id: 2,
+          name: 'second'
+        }
+      ]
+    };
+    const uDetail = {
+      id: 2,
+      detail: {
+        info: 'detail info'
+      }
+    };
+    const action = {
+      type: 'FETCH_UNIVERSITY_DETAIL_COMPLETE',
+      result: uDetail
+    };
+    const resultState = reducer(originalState, action);
+    expect(resultState.universityList[1].detail.info).toEqual('detail info');
+  });
 });

@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Goverment Education API can handle error 1`] = `[Error: Network Error]`;
+exports[`Government Education API can handle error 1`] = `[Error: Network Error]`;
+
+exports[`Government Education API fetching detail can handle error 1`] = `[Error: Network Error]`;

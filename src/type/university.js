@@ -12,6 +12,33 @@ export type AnnualCost = number;
 export type StudentSize = number;
 export type Loading = boolean;
 
+export type UniversityDetail = {
+  completion: { [year: number]: number },
+  cost: {
+    inState: { [year: number]: number },
+    outState: { [year: number]: number }
+  },
+  student: {
+    size: { [year: number]: number },
+    gradStudents: { [year: number]: number },
+    menShare: { [year: number]: number },
+    womenShare: { [year: number]: number },
+    nonResidentAlien: { [year: number]: number },
+    black: { [year: number]: number },
+    asian: { [year: number]: number },
+    white: { [year: number]: number },
+    avgIncome: { [year: number]: number }
+  },
+  admission: {
+    satScore: { [year: number]: number },
+    rate: { [year: number]: number }
+  },
+  aid: {
+    loanPrincipal: { [year: number]: number },
+    numberOfStudentsOnLoan: { [year: number]: number }
+  }
+};
+
 export type University = {
   +id: Id,
   +name: Name,
@@ -21,7 +48,8 @@ export type University = {
   +website: Website,
   +admissionRate: AdmissionRate,
   +annualCost: AnnualCost,
-  +studentSize: StudentSize
+  +studentSize: StudentSize,
+  +detail: UniversityDetail
 };
 
 export type UniversityList = Array<University>;
@@ -50,9 +78,22 @@ type SetSelectedUniversity = {
   type: 'SET_SELECTED_UNIVERSITY',
   id: Id
 };
+type CompleteFetchUniversityDetail = {
+  type: 'FETCH_UNIVERSITY_DETAIL_COMPLETE',
+  result: {
+    id: Id,
+    detail: UniversityDetail
+  }
+};
+type FailFetchUniversityDetail = {
+  type: 'FETCH_UNIVERSITY_DETAIL_FAIL',
+  error: string
+};
 
 export type UniversityActions =
   | BeginFetchUniversity
   | CompleteFetchUniversity
   | FailFetchUniversity
-  | SetSelectedUniversity;
+  | SetSelectedUniversity
+  | CompleteFetchUniversityDetail
+  | FailFetchUniversityDetail;

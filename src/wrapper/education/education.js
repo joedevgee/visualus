@@ -7,6 +7,7 @@ import type {
   Id,
   University as UniversityType
 } from '../../type/university';
+import { getSelectedUniversity } from '../../selector/university';
 import University from '../../component/university/university';
 import UniversityDetail from '../../component/universityDetail/universityDetail';
 
@@ -15,7 +16,7 @@ import './education.css';
 export type Props = {
   +loading: Loading,
   +universityList: UniversityList,
-  selectedUniversity?: UniversityType,
+  +selectedUniversityId: Id,
   +onInputValueChange: (input: string) => void,
   +onUniversitySelected: (id: Id) => void
 };
@@ -23,8 +24,8 @@ export type Props = {
 const Education = ({
   loading,
   universityList,
-  selectedUniversity,
   onInputValueChange,
+  selectedUniversityId,
   onUniversitySelected
 }: Props) => {
   const renderUniversity = () => (
@@ -35,10 +36,10 @@ const Education = ({
       onUniversitySelected={onUniversitySelected}
     />
   );
-  const renderUniversityDetail = () =>
-    selectedUniversity ? (
-      <UniversityDetail university={selectedUniversity} />
-    ) : null;
+  const renderUniversityDetail = () => {
+    const detailU = getSelectedUniversity(universityList, selectedUniversityId);
+    return !detailU ? null : <UniversityDetail university={detailU} />;
+  };
   return (
     <div className="education">
       <Switch>

@@ -32,12 +32,12 @@ export const Card = ({ university, history, selectUniversity }: Props) => {
 
   const renderActions = () => {
     const actionList = [];
-    const floatFormatter = new Intl.NumberFormat('en-US', {
+    const floatFormatter = new window.Intl.NumberFormat('en-US', {
       style: 'percent',
       maximumFractionDigits: 0
     });
-    const numberFormatter = new Intl.NumberFormat('en-US');
-    const currencyFormatter = new Intl.NumberFormat('en-US', {
+    const numberFormatter = new window.Intl.NumberFormat('en-US');
+    const currencyFormatter = new window.Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       maximumFractionDigits: 0,
@@ -76,7 +76,8 @@ export const Card = ({ university, history, selectUniversity }: Props) => {
     selectUniversity(university.id);
     /* istanbul ignore else */
     if (history) {
-      history.push(`${history.location.pathname}/${university.id}`);
+      const formattedName = university.name.replace(/\s+/g, '-').toLowerCase();
+      history.push(`${history.location.pathname}/${formattedName}`);
     }
   };
   return (
