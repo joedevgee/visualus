@@ -1,12 +1,7 @@
 // @flow
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import type {
-  UniversityList,
-  Loading,
-  Id,
-  University as UniversityType
-} from '../../type/university';
+import type { UniversityList, Loading, Id } from '../../type/university';
 import { getSelectedUniversity } from '../../selector/university';
 import University from '../../component/university/university';
 import UniversityDetail from '../../component/universityDetail/universityDetail';

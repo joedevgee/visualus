@@ -29,8 +29,8 @@ export const eduDataParser = (data: { string: number }): UniversityDetail => {
     }
   };
   Object.keys(data).forEach(resultKey => {
-    let year = '';
-    let value = 0;
+    let year: string = '';
+    let value: number = 0;
     switch (true) {
       case /^\d+.completion.+$/.test(resultKey): // Assign completion rate
         year = /^\d+/.exec(resultKey)[0];

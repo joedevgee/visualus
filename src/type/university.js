@@ -13,29 +13,29 @@ export type StudentSize = number;
 export type Loading = boolean;
 
 export type UniversityDetail = {
-  completion: { [year: number]: number },
+  completion: { [year: string]: number },
   cost: {
-    inState: { [year: number]: number },
-    outState: { [year: number]: number }
+    inState: { [year: string]: number },
+    outState: { [year: string]: number }
   },
   student: {
-    size: { [year: number]: number },
-    gradStudents: { [year: number]: number },
-    menShare: { [year: number]: number },
-    womenShare: { [year: number]: number },
-    nonResidentAlien: { [year: number]: number },
-    black: { [year: number]: number },
-    asian: { [year: number]: number },
-    white: { [year: number]: number },
-    avgIncome: { [year: number]: number }
+    size: { [year: string]: number },
+    gradStudents: { [year: string]: number },
+    menShare: { [year: string]: number },
+    womenShare: { [year: string]: number },
+    nonResidentAlien: { [year: string]: number },
+    black: { [year: string]: number },
+    asian: { [year: string]: number },
+    white: { [year: string]: number },
+    avgIncome: { [year: string]: number }
   },
   admission: {
-    satScore: { [year: number]: number },
-    rate: { [year: number]: number }
+    satScore: { [year: string]: number },
+    rate: { [year: string]: number }
   },
   aid: {
-    loanPrincipal: { [year: number]: number },
-    numberOfStudentsOnLoan: { [year: number]: number }
+    loanPrincipal: { [year: string]: number },
+    numberOfStudentsOnLoan: { [year: string]: number }
   }
 };
 

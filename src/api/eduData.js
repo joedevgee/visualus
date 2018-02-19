@@ -1,7 +1,8 @@
+// @flow
 import axios from 'axios';
 import { eduDataParser } from './eduDataParser';
 
-export const apiEndpoint =
+export const apiEndpoint: string =
   'https://api.data.gov/ed/collegescorecard/v1/schools.json';
 let defaultParams = {
   api_key: process.env.REACT_APP_GOV_DATA_API_KEY, // Appending api key
@@ -9,36 +10,24 @@ let defaultParams = {
     'id,school.name,school.alias,school.city,school.state,school.school_url,2015.student.size,2015.admissions.admission_rate.overall,2015.cost.attendance.academic_year'
 };
 
-export const universityList = input =>
+export const universityList = (input: string) =>
   new Promise((resolve, reject) => {
     axios
       .get(apiEndpoint, {
         params: { ...defaultParams, 'school.name': input }
       })
-      .then(response => {
-        const list = response.data.results.map(school => {
-          const id = school['id'];
-          const name = school['school.name'];
-          const alias = school['school.alias'];
-          const city = school['school.city'];
-          const state = school['school.state'];
-          const website = school['school.school_url'];
-          const studentSize = school['2015.student.size'];
-          const admissionRate =
-            school['2015.admissions.admission_rate.overall'];
-          const annualCost = school['2015.cost.attendance.academic_year'];
-          return {
-            id: id,
-            name: name,
-            alias: alias,
-            city: city,
-            state: state,
-            website: website,
-            studentSize: studentSize,
-            admissionRate: admissionRate,
-            annualCost: annualCost
-          };
-        });
+      .then(resp => {
+        const list = resp.data.results.map(school => ({
+          id: school['id'],
+          name: school['school.name'],
+          alias: school['school.alias'],
+          city: school['school.city'],
+          state: school['school.state'],
+          website: school['school.school_url'],
+          studentSize: school['2015.student.size'],
+          admissionRate: school['2015.admissions.admission_rate.overall'],
+          annualCost: school['2015.cost.attendance.academic_year']
+        }));
         resolve(list);
       })
       .catch(error => {
@@ -46,16 +35,20 @@ export const universityList = input =>
       });
   });
 
-export const universityDetail = input =>
+export const universityDetail = (input: number) =>
   new Promise((resolve, reject) => {
-    const timeParams = (path, start = 2005, end = 2015) => {
+    const timeParams = (
+      path: string,
+      start: number = 2005,
+      end: number = 2015
+    ): string => {
       const paramList = [];
       for (var i = start; i <= end; i++) {
         paramList.push(`${i}.${path}`);
       }
       return paramList.join();
     };
-    const requiredField = [
+    const requiredField: Array<string> = [
       'completion.completion_rate_4yr_100nt',
       'cost.tuition.in_state',
       'cost.tuition.out_of_state',
@@ -75,7 +68,7 @@ export const universityDetail = input =>
       'aid.loan_principal',
       'aid.students_with_any_loan'
     ];
-    const fieldList = [];
+    const fieldList: Array<string> = [];
     requiredField.forEach(field => {
       fieldList.push(timeParams(field));
     });
