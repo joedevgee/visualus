@@ -31,7 +31,7 @@ ShallowWrapper {
       "loading": false,
       "onInputValueChange": [Function],
       "onUniversitySelected": [Function],
-      "selectedUniversity": null,
+      "selectedUniversityId": undefined,
       "store": Object {
         "clearActions": [Function],
         "dispatch": [Function],
@@ -90,7 +90,7 @@ ShallowWrapper {
         "loading": false,
         "onInputValueChange": [Function],
         "onUniversitySelected": [Function],
-        "selectedUniversity": null,
+        "selectedUniversityId": undefined,
         "store": Object {
           "clearActions": [Function],
           "dispatch": [Function],

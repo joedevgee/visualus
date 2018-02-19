@@ -40,15 +40,34 @@ describe('Education wrapper', () => {
     expect(wrapper.find(University)).toHaveLength(0);
     expect(wrapper.find(UniversityDetail)).toHaveLength(0);
   });
-  it('should not render universitydetail component when selected', () => {
-    const selectedU = {};
+  it('should render universitydetail component when selected', () => {
+    const uList = [
+      {
+        id: 1,
+        name: 'Test University',
+        alias: 'Test Alias',
+        city: 'Test city',
+        state: 'Test state',
+        website: 'Test website',
+        admissionRate: 0,
+        annualCost: 0,
+        studentSize: 0,
+        detail: {
+          student: {
+            size: {
+              '2010': 1
+            }
+          }
+        }
+      }
+    ];
     wrapper = mount(
-      <MemoryRouter initialEntries={['/education/detail']}>
+      <MemoryRouter initialEntries={['/education/123']}>
         <Education
           loading={defaultProps.loading}
-          universityList={defaultProps.universityList}
+          universityList={uList}
           onInputValueChange={defaultProps.onInputValueChange}
-          selectedUniversity={selectedU}
+          selectedUniversityId={1}
         />
       </MemoryRouter>
     );

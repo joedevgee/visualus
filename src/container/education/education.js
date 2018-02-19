@@ -23,10 +23,7 @@ const mapStateToProps = (state: State) => {
   return {
     loading: state.Education.loading,
     universityList: state.Education.universityList,
-    selectedUniversity: getSelectedUniversity(
-      state.Education.universityList,
-      state.Education.selectedId
-    )
+    selectedUniversityId: state.Education.selectedId
   };
 };
 
