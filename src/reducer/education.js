@@ -36,6 +36,20 @@ const education = (
         loading: false,
         selectedId: action.id
       };
+    case 'FETCH_UNIVERSITY_DETAIL_COMPLETE':
+      return {
+        ...state,
+        loading: false,
+        universityList: state.universityList.map(
+          u =>
+            u.id === action.result.id
+              ? {
+                  ...u,
+                  detail: action.result.detail
+                }
+              : u
+        )
+      };
     default:
       return state;
   }
