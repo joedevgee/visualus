@@ -37,15 +37,17 @@ const education = (
         selectedId: action.id
       };
     case 'FETCH_UNIVERSITY_DETAIL_COMPLETE':
+      const id = action.result.id;
+      const detail = action.result.detail;
       return {
         ...state,
         loading: false,
         universityList: state.universityList.map(
           u =>
-            u.id === action.result.id
+            u.id === id
               ? {
                   ...u,
-                  detail: action.result.detail
+                  detail: detail
                 }
               : u
         )

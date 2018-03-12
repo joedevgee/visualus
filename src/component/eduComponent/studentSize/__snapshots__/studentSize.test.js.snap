@@ -1,0 +1,458 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VIsualization for student size should switch to show gradsize 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <StudentSize
+    gradSize={
+        Object {
+            "2005": 1,
+          }
+    }
+    undergradSize={
+        Object {
+            "2005": 1,
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Switch
+          checkedChildren="Undergraduate"
+          defaultChecked={true}
+          onChange={[Function]}
+          prefixCls="ant-switch"
+          unCheckedChildren="Graduate"
+/>,
+        <Chart
+          data={
+                    Array [
+                              Object {
+                                "size": 1,
+                                "year": "2005",
+                              },
+                            ]
+          }
+          forceFit={true}
+          height={400}
+          scale={
+                    Object {
+                              "size": Object {
+                                "alias": "student size",
+                              },
+                              "year": Object {
+                                "alias": "year",
+                              },
+                            }
+          }
+>
+          <TypedComponent
+                    line={
+                              Object {
+                                        "stroke": "#E6E6E6",
+                                      }
+                    }
+                    name="year"
+                    tickLine={null}
+                    title={null}
+          />
+          <TypedComponent
+                    grid={null}
+                    line={false}
+                    name="student size"
+                    tickLine={null}
+                    title={null}
+          />
+          <TypedComponent />
+          <TypedComponent
+                    color="l (270) 0:rgba(255, 146, 255, 1) .5:rgba(100, 268, 255, 1) 1:rgba(215, 0, 255, 1)"
+                    position="year*size"
+                    shape="smooth"
+                    size={1}
+                    style={
+                              Object {
+                                        "shadowBlur": 60,
+                                        "shadowColor": "l (270) 0:rgba(21, 146, 255, 0)",
+                                        "shadowOffsetY": 6,
+                                      }
+                    }
+                    type="line"
+          />
+</Chart>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "checkedChildren": "Undergraduate",
+          "defaultChecked": true,
+          "onChange": [Function],
+          "prefixCls": "ant-switch",
+          "unCheckedChildren": "Graduate",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <TypedComponent
+              line={
+                            Object {
+                                          "stroke": "#E6E6E6",
+                                        }
+              }
+              name="year"
+              tickLine={null}
+              title={null}
+/>,
+            <TypedComponent
+              grid={null}
+              line={false}
+              name="student size"
+              tickLine={null}
+              title={null}
+/>,
+            <TypedComponent />,
+            <TypedComponent
+              color="l (270) 0:rgba(255, 146, 255, 1) .5:rgba(100, 268, 255, 1) 1:rgba(215, 0, 255, 1)"
+              position="year*size"
+              shape="smooth"
+              size={1}
+              style={
+                            Object {
+                                          "shadowBlur": 60,
+                                          "shadowColor": "l (270) 0:rgba(21, 146, 255, 0)",
+                                          "shadowOffsetY": 6,
+                                        }
+              }
+              type="line"
+/>,
+          ],
+          "data": Array [
+            Object {
+              "size": 1,
+              "year": "2005",
+            },
+          ],
+          "forceFit": true,
+          "height": 400,
+          "scale": Object {
+            "size": Object {
+              "alias": "student size",
+            },
+            "year": Object {
+              "alias": "year",
+            },
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "line": Object {
+                "stroke": "#E6E6E6",
+              },
+              "name": "year",
+              "tickLine": null,
+              "title": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "grid": null,
+              "line": false,
+              "name": "student size",
+              "tickLine": null,
+              "title": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "color": "l (270) 0:rgba(255, 146, 255, 1) .5:rgba(100, 268, 255, 1) 1:rgba(215, 0, 255, 1)",
+              "position": "year*size",
+              "shape": "smooth",
+              "size": 1,
+              "style": Object {
+                "shadowBlur": 60,
+                "shadowColor": "l (270) 0:rgba(21, 146, 255, 0)",
+                "shadowOffsetY": 6,
+              },
+              "type": "line",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Switch
+            checkedChildren="Undergraduate"
+            defaultChecked={true}
+            onChange={[Function]}
+            prefixCls="ant-switch"
+            unCheckedChildren="Graduate"
+/>,
+          <Chart
+            data={
+                        Array [
+                                    Object {
+                                      "size": 1,
+                                      "year": "2005",
+                                    },
+                                  ]
+            }
+            forceFit={true}
+            height={400}
+            scale={
+                        Object {
+                                    "size": Object {
+                                      "alias": "student size",
+                                    },
+                                    "year": Object {
+                                      "alias": "year",
+                                    },
+                                  }
+            }
+>
+            <TypedComponent
+                        line={
+                                    Object {
+                                                "stroke": "#E6E6E6",
+                                              }
+                        }
+                        name="year"
+                        tickLine={null}
+                        title={null}
+            />
+            <TypedComponent
+                        grid={null}
+                        line={false}
+                        name="student size"
+                        tickLine={null}
+                        title={null}
+            />
+            <TypedComponent />
+            <TypedComponent
+                        color="l (270) 0:rgba(255, 146, 255, 1) .5:rgba(100, 268, 255, 1) 1:rgba(215, 0, 255, 1)"
+                        position="year*size"
+                        shape="smooth"
+                        size={1}
+                        style={
+                                    Object {
+                                                "shadowBlur": 60,
+                                                "shadowColor": "l (270) 0:rgba(21, 146, 255, 0)",
+                                                "shadowOffsetY": 6,
+                                              }
+                        }
+                        type="line"
+            />
+</Chart>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "checkedChildren": "Undergraduate",
+            "defaultChecked": true,
+            "onChange": [Function],
+            "prefixCls": "ant-switch",
+            "unCheckedChildren": "Graduate",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <TypedComponent
+                line={
+                                Object {
+                                                "stroke": "#E6E6E6",
+                                              }
+                }
+                name="year"
+                tickLine={null}
+                title={null}
+/>,
+              <TypedComponent
+                grid={null}
+                line={false}
+                name="student size"
+                tickLine={null}
+                title={null}
+/>,
+              <TypedComponent />,
+              <TypedComponent
+                color="l (270) 0:rgba(255, 146, 255, 1) .5:rgba(100, 268, 255, 1) 1:rgba(215, 0, 255, 1)"
+                position="year*size"
+                shape="smooth"
+                size={1}
+                style={
+                                Object {
+                                                "shadowBlur": 60,
+                                                "shadowColor": "l (270) 0:rgba(21, 146, 255, 0)",
+                                                "shadowOffsetY": 6,
+                                              }
+                }
+                type="line"
+/>,
+            ],
+            "data": Array [
+              Object {
+                "size": 1,
+                "year": "2005",
+              },
+            ],
+            "forceFit": true,
+            "height": 400,
+            "scale": Object {
+              "size": Object {
+                "alias": "student size",
+              },
+              "year": Object {
+                "alias": "year",
+              },
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "line": Object {
+                  "stroke": "#E6E6E6",
+                },
+                "name": "year",
+                "tickLine": null,
+                "title": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "grid": null,
+                "line": false,
+                "name": "student size",
+                "tickLine": null,
+                "title": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "color": "l (270) 0:rgba(255, 146, 255, 1) .5:rgba(100, 268, 255, 1) 1:rgba(215, 0, 255, 1)",
+                "position": "year*size",
+                "shape": "smooth",
+                "size": 1,
+                "style": Object {
+                  "shadowBlur": 60,
+                  "shadowColor": "l (270) 0:rgba(21, 146, 255, 0)",
+                  "shadowOffsetY": 6,
+                },
+                "type": "line",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

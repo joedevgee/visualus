@@ -1,22 +1,59 @@
 // @flow
-import React from 'react';
-import type { UniversityDetail } from '../../../type/university';
+import * as React from 'react';
+import { Switch } from 'antd';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 
 import './studentSize.css';
 
 type Props = {
-  +detail: UniversityDetail
+  +undergradSize: { [year: string]: number },
+  +gradSize: { [year: string]: number }
 };
 
-const StudentSize = ({ detail }: Props) => {
-  const renderDataViz = () => {
+type State = {
+  showUndergrad: boolean
+};
+
+class StudentSize extends React.Component<Props, State> {
+  static defaultProps = {
+    undergradSize: {},
+    gradSize: {}
+  };
+
+  state = {
+    showUndergrad: true
+  };
+
+  onSwitchChange = (checked: boolean) => {
+    this.setState({
+      showUndergrad: checked
+    });
+  };
+
+  renderSwitch = () => {
+    const isUndergradEmpty = Object.keys(this.props.undergradSize).length === 0;
+    const isGradEmpty = Object.keys(this.props.gradSize).length === 0;
+    if (isUndergradEmpty || isGradEmpty) {
+      return '';
+    } else {
+      return (
+        <Switch
+          checkedChildren={'Undergraduate'}
+          unCheckedChildren={'Graduate'}
+          onChange={this.onSwitchChange}
+          defaultChecked
+        />
+      );
+    }
+  };
+
+  renderDataViz = (size: { [year: string]: number }) => {
     const sizeData = [];
-    Object.keys(detail.student.size).forEach(year => {
-      const size = detail.student.size[year];
+    Object.keys(size).forEach(year => {
+      const studentSize = size[year];
       sizeData.push({
         year: year,
-        size: size
+        size: studentSize
       });
     });
     const cols = {
@@ -54,12 +91,19 @@ const StudentSize = ({ detail }: Props) => {
       </Chart>
     );
   };
-  return (
-    <div>
-      <h1>student detail size section</h1>
-      {detail.student && detail.student.size && renderDataViz()}
-    </div>
-  );
-};
+
+  render() {
+    return (
+      <div>
+        {this.renderSwitch()}
+        {this.renderDataViz(
+          this.state.showUndergrad
+            ? this.props.undergradSize
+            : this.props.gradSize
+        )}
+      </div>
+    );
+  }
+}
 
 export default StudentSize;

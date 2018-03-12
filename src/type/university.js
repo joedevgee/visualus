@@ -11,6 +11,17 @@ export type AdmissionRate = number;
 export type AnnualCost = number;
 export type StudentSize = number;
 export type Loading = boolean;
+export type StudentDetail = {
+  size: { [year: string]: number },
+  gradStudents: { [year: string]: number },
+  menShare: { [year: string]: number },
+  womenShare: { [year: string]: number },
+  nonResidentAlien: { [year: string]: number },
+  black: { [year: string]: number },
+  asian: { [year: string]: number },
+  white: { [year: string]: number },
+  avgIncome: { [year: string]: number }
+};
 
 export type UniversityDetail = {
   completion: { [year: string]: number },
@@ -18,17 +29,7 @@ export type UniversityDetail = {
     inState: { [year: string]: number },
     outState: { [year: string]: number }
   },
-  student: {
-    size: { [year: string]: number },
-    gradStudents: { [year: string]: number },
-    menShare: { [year: string]: number },
-    womenShare: { [year: string]: number },
-    nonResidentAlien: { [year: string]: number },
-    black: { [year: string]: number },
-    asian: { [year: string]: number },
-    white: { [year: string]: number },
-    avgIncome: { [year: string]: number }
-  },
+  student: StudentDetail,
   admission: {
     satScore: { [year: string]: number },
     rate: { [year: string]: number }
