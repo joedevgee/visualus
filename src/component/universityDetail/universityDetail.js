@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import StudentSize from '../eduComponent/studentSize/studentSize';
+import Student from '../eduComponent/student/student';
 import type { University } from '../../type/university';
 
 import './universityDetail.css';
@@ -10,9 +10,9 @@ type Props = {
 };
 
 const UniversityDetail = ({ university }: Props) => {
-  const renderOptionalContent = () => {
-    if (university.detail) {
-      return <StudentSize detail={university.detail} />;
+  const renderStudentContent = () => {
+    if (university.detail && university.detail.student) {
+      return <Student student={university.detail.student} />;
     } else {
       return <h2>No detail yet</h2>;
     }
@@ -20,7 +20,7 @@ const UniversityDetail = ({ university }: Props) => {
   return (
     <div>
       <h1>{university.name}</h1>
-      {renderOptionalContent()}
+      {renderStudentContent()}
     </div>
   );
 };
