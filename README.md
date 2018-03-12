@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/devilbags/visualus.svg?token=fEx7WyeeLyeWx5syV9y1&branch=master)](https://travis-ci.com/devilbags/visualus)
 # Front-End data visualization experiment
 
 Use public API and react to build data visualization website
