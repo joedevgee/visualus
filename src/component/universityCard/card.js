@@ -30,6 +30,7 @@ export const Card = ({ university, history, selectUniversity }: Props) => {
     </span>
   );
 
+  /* istanbul ignore next */
   const renderActions = () => {
     const actionList = [];
     const floatFormatter = new window.Intl.NumberFormat('en-US', {
