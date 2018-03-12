@@ -11,7 +11,6 @@ type Props = {
   +selectUniversity: (id: Id) => void,
   history?: any
 };
-
 type IconTextProps = {
   +type: string,
   +text: string,
