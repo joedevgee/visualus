@@ -14,12 +14,30 @@ const mapStateToProps = (state: State) => {
     loading: state.Education.loading,
     metaData: state.Education.metaData,
     universityList: state.Education.universityList,
-    selectedUniversityId: state.Education.selectedId
+    selectedUniversityId: state.Education.selectedId,
+    keyword: state.Education.keyword
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
+// const mapDispatchToProps = (dispatch: Dispatch, stateProps) => {
+//   return {
+//     onInputValueChange: input => {
+//       dispatch(beginFetchUniversity(input, 0, 20));
+//     },
+//     onUniversitySelected: id => {
+//       dispatch(setSelectUniversity(id));
+//     },
+//     onPageChange: (page: Number, pageSize: Number) => {
+//       dispatch(beginFetchUniversity(stateProps.keyword, page, pageSize));
+//     }
+//   };
+// };
+
+function mergeProps(stateProps, dispatchProps, ownProps) {
+  const { dispatch } = dispatchProps;
   return {
+    ...stateProps,
+    //Write MapDispatch here
     onInputValueChange: input => {
       dispatch(beginFetchUniversity(input, 0, 20));
     },
@@ -27,14 +45,14 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
       dispatch(setSelectUniversity(id));
     },
     onPageChange: (page: Number, pageSize: Number) => {
-      dispatch(beginFetchUniversity(state.Education.keyword, page, pageSize));
+      dispatch(beginFetchUniversity(stateProps.keyword, page - 1, pageSize));
     }
   };
-};
+}
 
 const connector: Connector<{}, Props> = connect(
   mapStateToProps,
-  mapDispatchToProps
+  null,
+  mergeProps
 );
-
 export default connector(Education);
