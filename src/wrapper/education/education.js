@@ -10,15 +10,19 @@ import './education.css';
 
 export type Props = {
   +loading: Loading,
+  +metaData: Object,
   +universityList: UniversityList,
   +selectedUniversityId: Id,
   +onInputValueChange: (input: string) => void,
-  +onUniversitySelected: (id: Id) => void
+  +onUniversitySelected: (id: Id) => void,
+  +onPageChange: (page: Number, pageSize: Number) => void
 };
 
 const Education = ({
   loading,
   universityList,
+  metaData,
+  onPageChange,
   onInputValueChange,
   selectedUniversityId,
   onUniversitySelected
@@ -27,6 +31,8 @@ const Education = ({
     <University
       loading={loading}
       valueList={universityList}
+      metaData={metaData}
+      onPageChange={onPageChange}
       onInputValueChange={onInputValueChange}
       onUniversitySelected={onUniversitySelected}
     />

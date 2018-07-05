@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Input, Row, Col, List } from 'antd';
+import { Input, Row, Col, List, Pagination } from 'antd';
 
 import type {
   UniversityList,
@@ -13,14 +13,18 @@ import './university.css';
 
 export type Props = {
   +loading: boolean,
+  +metaData: Object,
   +valueList: UniversityList,
   +onInputValueChange: (input: string) => void,
-  +onUniversitySelected: (id: Id) => void
+  +onUniversitySelected: (id: Id) => void,
+  +onPageChange: (page: Number, pageSize: Number) => void
 };
 
 const University = ({
   loading,
+  metaData,
   valueList,
+  onPageChange,
   onInputValueChange,
   onUniversitySelected
 }: Props) => {
@@ -60,10 +64,24 @@ const University = ({
     );
   };
 
+  const renderPagination = () => {
+    return (
+      <Pagination
+        size="small"
+        total={metaData.total}
+        pageSize={metaData.per_page}
+        current={metaData.page + 1}
+        onChange={onPageChange}
+        showTotal={total => `Total ${total} items`}
+      />
+    );
+  };
+
   return (
     <div>
       {renderSearchField()}
       {renderUniversityList()}
+      {renderPagination()}
     </div>
   );
 };

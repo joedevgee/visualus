@@ -12,6 +12,7 @@ import Education from '../../wrapper/education/education';
 const mapStateToProps = (state: State) => {
   return {
     loading: state.Education.loading,
+    metaData: state.Education.metaData,
     universityList: state.Education.universityList,
     selectedUniversityId: state.Education.selectedId
   };
@@ -20,10 +21,13 @@ const mapStateToProps = (state: State) => {
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     onInputValueChange: input => {
-      dispatch(beginFetchUniversity(input));
+      dispatch(beginFetchUniversity(input, 0, 20));
     },
     onUniversitySelected: id => {
       dispatch(setSelectUniversity(id));
+    },
+    onPageChange: (page: Number, pageSize: Number) => {
+      dispatch(beginFetchUniversity(state.Education.keyword, page, pageSize));
     }
   };
 };

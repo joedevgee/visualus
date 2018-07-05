@@ -6,7 +6,13 @@ import type {
 
 const defaultState: UniversityListState = {
   loading: false,
-  universityList: []
+  keyword: '',
+  universityList: [],
+  metaData: {
+    total: 0,
+    per_page: 20,
+    page: 0
+  }
 };
 
 const education = (
@@ -17,13 +23,15 @@ const education = (
     case 'FETCH_UNIVERSITY_BEGIN':
       return {
         ...state,
-        loading: true
+        loading: true,
+        keyword: action.input
       };
     case 'FETCH_UNIVERSITY_COMPLETE':
       return {
         ...state,
         loading: false,
-        universityList: action.result
+        universityList: action.result,
+        metaData: action.meta
       };
     case 'FETCH_UNIVERSITY_FAIL':
       return {

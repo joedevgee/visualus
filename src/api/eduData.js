@@ -10,11 +10,14 @@ let defaultParams = {
     'id,school.name,school.alias,school.city,school.state,school.school_url,2015.student.size,2015.admissions.admission_rate.overall,2015.cost.attendance.academic_year'
 };
 
-export const universityList = (input: string) =>
+export const universityList = (input: Array) =>
   new Promise((resolve, reject) => {
     axios
       .get(apiEndpoint, {
-        params: { ...defaultParams, 'school.name': input }
+        params: {
+          ...defaultParams,
+          ...{ 'school.name': input[0], page: input[1], per_page: input[2] }
+        }
       })
       .then(resp => {
         const list = resp.data.results.map(school => ({
@@ -28,7 +31,8 @@ export const universityList = (input: string) =>
           admissionRate: school['2015.admissions.admission_rate.overall'],
           annualCost: school['2015.cost.attendance.academic_year']
         }));
-        resolve(list);
+        const meta = { ...resp.data.metadata, keyword: input };
+        resolve([list, meta]);
       })
       .catch(error => {
         reject(error);
