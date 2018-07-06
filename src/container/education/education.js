@@ -1,7 +1,7 @@
 // @flow
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
-import type { State, Dispatch } from '../../type';
+import type { State } from '../../type';
 
 import { beginFetchUniversity } from '../../action/fetchUniversity';
 import { setSelectUniversity } from '../../action/selectUniversity';

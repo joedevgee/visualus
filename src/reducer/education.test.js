@@ -4,7 +4,13 @@ describe('Education reducer', () => {
   it('Should return default state', () => {
     const expectedState = {
       loading: false,
-      universityList: []
+      keyword: '',
+      universityList: [],
+      metaData: {
+        total: 0,
+        per_page: 20,
+        page: 0
+      }
     };
     expect(reducer(undefined, {})).toEqual(expectedState);
   });

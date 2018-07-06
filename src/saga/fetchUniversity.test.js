@@ -6,7 +6,7 @@ import watchFetchUniversity, {
 import { universityList, universityDetail } from '../api/eduData';
 
 describe('FetchUniversity saga', () => {
-  const action = { input: 'uc' };
+  const action = { input: ['uc', 0, 20] };
   let output = null;
   it('Should watch for fetch university request', () => {
     const generator = watchFetchUniversity();
@@ -30,11 +30,13 @@ describe('FetchUniversity saga', () => {
         alias: 'alias'
       }
     ];
+    const meta = undefined;
     generator.next();
     output = generator.next(result).value;
     const expectedResult = put({
       type: 'FETCH_UNIVERSITY_COMPLETE',
-      result
+      result,
+      meta
     });
     expect(output).toEqual(expectedResult);
   });
