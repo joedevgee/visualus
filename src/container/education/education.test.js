@@ -10,6 +10,13 @@ const setup = (setupProps = {}) => {
   const store = configureStore()({
     Education: {
       loading: false,
+      metaData: {
+        total: 0,
+        per_page: 20,
+        page: 0
+      },
+      keyword: '',
+
       universityList: [
         {
           id: 1,
@@ -45,7 +52,9 @@ describe('Education container', () => {
   it('Should dispatch begin fetch action', () => {
     const { wrapper, store } = setup();
     wrapper.props().onInputValueChange('test');
-    expect(store.dispatch).toHaveBeenCalledWith(beginFetchUniversity('test'));
+    expect(store.dispatch).toHaveBeenCalledWith(
+      beginFetchUniversity('test', 0, 20)
+    );
   });
   it('Should dispatch set select university action', () => {
     const { wrapper, store } = setup();

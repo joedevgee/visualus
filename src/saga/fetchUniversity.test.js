@@ -19,7 +19,9 @@ describe('FetchUniversity saga', () => {
   it('Should call education API when fetching u-list', () => {
     const generator = fetchUniversity(action);
     output = generator.next().value;
-    expect(output).toEqual(call(universityList, action.input));
+    expect(output).toEqual(
+      call(universityList, [action.input, action.page, action.pageSize])
+    );
   });
   it('Should return a FETCH_UNIVERSITY_COMPLETE action after success api call', () => {
     const generator = fetchUniversity(action);
@@ -35,7 +37,7 @@ describe('FetchUniversity saga', () => {
     output = generator.next(result).value;
     const expectedResult = put({
       type: 'FETCH_UNIVERSITY_COMPLETE',
-      result,
+      result: result[0],
       meta
     });
     expect(output).toEqual(expectedResult);

@@ -36,6 +36,8 @@ describe('Education reducer', () => {
     const state = reducer(undefined, action);
     const expectedState = {
       loading: false,
+      keyword: '',
+      metaData: undefined,
       universityList: [
         {
           id: 1,

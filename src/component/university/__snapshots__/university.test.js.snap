@@ -6,7 +6,16 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <University
     loading={false}
+    metaData={
+        Object {
+            "page": 0,
+            "per_page": 20,
+            "total": 0,
+          }
+    }
     onInputValueChange={[Function]}
+    onPageChange={[Function]}
+    onUniversitySelected={[Function]}
     valueList={
         Array [
             Object {
@@ -86,6 +95,16 @@ ShallowWrapper {
           renderItem={[Function]}
           size="large"
           split={true}
+/>,
+        <Pagination
+          current={1}
+          onChange={[Function]}
+          pageSize={20}
+          prefixCls="ant-pagination"
+          selectPrefixCls="ant-select"
+          showTotal={[Function]}
+          size="small"
+          total={0}
 />,
       ],
     },
@@ -207,6 +226,24 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "current": 1,
+          "onChange": [Function],
+          "pageSize": 20,
+          "prefixCls": "ant-pagination",
+          "selectPrefixCls": "ant-select",
+          "showTotal": [Function],
+          "size": "small",
+          "total": 0,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -273,6 +310,16 @@ ShallowWrapper {
             renderItem={[Function]}
             size="large"
             split={true}
+/>,
+          <Pagination
+            current={1}
+            onChange={[Function]}
+            pageSize={20}
+            prefixCls="ant-pagination"
+            selectPrefixCls="ant-select"
+            showTotal={[Function]}
+            size="small"
+            total={0}
 />,
         ],
       },
@@ -389,6 +436,24 @@ ShallowWrapper {
             "renderItem": [Function],
             "size": "large",
             "split": true,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "current": 1,
+            "onChange": [Function],
+            "pageSize": 20,
+            "prefixCls": "ant-pagination",
+            "selectPrefixCls": "ant-select",
+            "showTotal": [Function],
+            "size": "small",
+            "total": 0,
           },
           "ref": null,
           "rendered": null,

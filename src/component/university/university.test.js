@@ -13,14 +13,24 @@ const setup = (setupProps = {}) => {
         alias: 'BU'
       }
     ],
-    onInputValueChange: jest.fn()
+    metaData: {
+      total: 0,
+      per_page: 20,
+      page: 0
+    },
+    onInputValueChange: jest.fn(),
+    onPageChange: jest.fn(),
+    onUniversitySelected: jest.fn()
   };
   const props = { ...defaultProps, ...setupProps };
   const wrapper = shallow(
     <University
       loading={props.loading}
       valueList={props.valueList}
+      metaData={props.metaData}
       onInputValueChange={props.onInputValueChange}
+      onPageChange={props.onPageChange}
+      onUniversitySelected={props.onUniversitySelected}
     />
   );
   const enzymeWrapper = mount(

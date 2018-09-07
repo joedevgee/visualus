@@ -21,7 +21,7 @@ describe('Government Education API', () => {
       ]
     });
     const response = await universityList('uc');
-    expect(response[0].id).toEqual(110662);
+    expect(response[0][0].id).toEqual(110662);
   });
   it('can handle error', async () => {
     const mock = new MockAdapter(axios);
