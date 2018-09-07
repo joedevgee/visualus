@@ -15,8 +15,8 @@ describe('Education wrapper', () => {
       page: 0
     },
     universityList: [],
-    onInputValueChange: jest.fn(),
-    onUniversitySelected: jest.fn()
+    onPageChange: jest.fn(),
+    onInputValueChange: jest.fn()
   };
   let wrapper;
   it('should render universityList component', () => {
@@ -25,8 +25,9 @@ describe('Education wrapper', () => {
         <Education
           loading={defaultProps.loading}
           universityList={defaultProps.universityList}
-          onInputValueChange={defaultProps.onInputValueChange}
           metaData={defaultProps.metaData}
+          onInputValueChange={defaultProps.onInputValueChange}
+          onPageChange={defaultProps.onPageChange}
         />
       </MemoryRouter>
     );
