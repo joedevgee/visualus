@@ -20,7 +20,7 @@ const App = () => {
         </Switch>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        VisualUSA ©2018 Created by Joey Liu
+        VisualUSA ©2017 Created by Joey Liu
       </Footer>
     </Layout>
   );
