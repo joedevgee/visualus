@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Government Education API can handle error 1`] = `[TypeError: Cannot read property '0' of undefined]`;
+
+exports[`Government Education API fetching detail can handle error 1`] = `[Error: Network Error]`;
