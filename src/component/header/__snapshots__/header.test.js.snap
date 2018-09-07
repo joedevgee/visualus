@@ -2,13 +2,13 @@
 
 exports[`Header should match snapshot 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -28,6 +28,7 @@ ShallowWrapper {
                               "1",
                             ]
           }
+          focusable={false}
           mode="horizontal"
           prefixCls="ant-menu"
           style={
@@ -101,6 +102,7 @@ ShallowWrapper {
           "defaultSelectedKeys": Array [
             "1",
           ],
+          "focusable": false,
           "mode": "horizontal",
           "prefixCls": "ant-menu",
           "style": Object {
@@ -189,6 +191,7 @@ ShallowWrapper {
                                     "1",
                                   ]
             }
+            focusable={false}
             mode="horizontal"
             prefixCls="ant-menu"
             style={
@@ -262,6 +265,7 @@ ShallowWrapper {
             "defaultSelectedKeys": Array [
               "1",
             ],
+            "focusable": false,
             "mode": "horizontal",
             "prefixCls": "ant-menu",
             "style": Object {
@@ -338,8 +342,20 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
   },
 }
 `;

@@ -9,6 +9,11 @@ import universityDetail from '../../component/universityDetail/universityDetail'
 describe('Education wrapper', () => {
   const defaultProps = {
     loading: false,
+    metaData: {
+      total: 0,
+      per_page: 20,
+      page: 0
+    },
     universityList: [],
     onInputValueChange: jest.fn(),
     onUniversitySelected: jest.fn()
@@ -21,6 +26,7 @@ describe('Education wrapper', () => {
           loading={defaultProps.loading}
           universityList={defaultProps.universityList}
           onInputValueChange={defaultProps.onInputValueChange}
+          metaData={defaultProps.metaData}
         />
       </MemoryRouter>
     );
@@ -34,6 +40,7 @@ describe('Education wrapper', () => {
           loading={defaultProps.loading}
           universityList={defaultProps.universityList}
           onInputValueChange={defaultProps.onInputValueChange}
+          metaData={defaultProps.metaData}
         />
       </MemoryRouter>
     );
@@ -68,6 +75,7 @@ describe('Education wrapper', () => {
           universityList={uList}
           onInputValueChange={defaultProps.onInputValueChange}
           selectedUniversityId={1}
+          metaData={defaultProps.metaData}
         />
       </MemoryRouter>
     );
